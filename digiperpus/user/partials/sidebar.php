@@ -1,17 +1,17 @@
 <nav class="fixed top-0 left-64 right-0 h-20 bg-white shadow flex items-center px-5 z-40 transition-all">
     <!-- Judul -->
     <div class="flex-1">
-        <h1 class="text-xl font-bold text-blue-secondary">Dashboard Admin</h1>
-        <p class="text-sm text-gray-500">Digiperpus | Sistem Perpustakaan Digital</p>
+        <h1 class="text-xl font-bold text-blue-secondary">Dashboard Anggota</h1>
+        <p class="text-sm text-gray-500">Digiperpus | Sistem Peminjaman Buku</p>
     </div>
 
     <!-- User Info -->
     <div class="flex items-center gap-4">
         <div class="text-right">
-            <p class="text-sm font-semibold text-blue-secondary"><?= $_SESSION['nama'] ?? 'Admin'; ?></p>
-            <p class="text-xs text-gray-500">Admin</p>
+            <p class="text-sm font-semibold text-blue-secondary"><?php echo $_SESSION['username']; ?></p>
+            <p class="text-xs text-gray-500">Anggota</p>
         </div>
-        <a href="profil_admin.php">
+        <a href="profil_anggota.php">
             <img src="../assets/img/profil.webp" alt="User Icon" class="w-10 h-10 rounded-full object-cover">
         </a>
     </div>
@@ -26,10 +26,10 @@
 
         <!-- Menu -->
         <ul class="space-y-2 font-medium mt-10 ml-2">
-            <li><a href="dashboard_admin.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
-            <li><a href="transaksi.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
-            <li><a href="daftar_buku.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/open-book.png" alt="Data Buku" class="w-5 h-5 mr-3"><span>Daftar Buku</span></a></li>
-            <li><a href="daftar_anggota.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/group-users.png" alt="Data Anggota" class="w-5 h-5 mr-3"><span>Daftar Anggota</span></a></li>
+            <li><a href="" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
+            <!-- <li><a href="daftar_buku.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/open-book.png" alt="Data Buku" class="w-5 h-5 mr-3"><span>Data Buku</span></a></li> -->
+            <li><a href="" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
+            <!-- <li><a href="daftar_anggota.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/group-users.png" alt="Data Anggota" class="w-5 h-5 mr-3"><span>Data Anggota</span></a></li> -->
 
             <hr class="my-4 border-blue-primary">
 

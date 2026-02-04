@@ -12,7 +12,13 @@
             theme: {
                 extend: {
                     colors: {
-                        'blue-primary': '#3b82f6'
+                        'blue-primary': '#3b82f6',
+                        'blue-secondary': '#0065F8',
+                        'teal-primary': '#0d9488',
+                        'teal-secondary': '#14b8a6',
+                        'cyan-accent': '#0bbee0',
+                        'gray-light': '#f8fafc',
+                        'emerald-accent': '#10b981'
                     },
                 },
             },
@@ -26,6 +32,7 @@
             font-family: 'Inter', ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
         }
     </style>
+    
 </head>
 <body class="bg-teal-50 min-h-screen relative">
     <!-- Navbar --> 

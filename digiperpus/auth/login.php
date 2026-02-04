@@ -24,12 +24,16 @@
         }
     </script>
 </head>
-<body class="bg-gray-light min-h-screen flex items-center justify-center">
+
+<!-- JS Login -->
+<script src="../assets/js/login.js"></script>
+
+<body class="bg-gradient-to-t from-cyan-100 to-teal-50 min-h-screen flex items-center justify-center">
     <!-- Login Container -->
     <div class="w-full max-w-md">
         <!-- Logo Section -->
         <div class="text-center mb-8">
-            <div class="flex items-center justify-center mb-4 group">
+            <div class="flex items-center justify-center mb-2 group">
                 <img src="../assets/img/logo_digiperpus1.png" alt="Logo DigiPerpus" class="h-20 w-50 rounded-3xl object-cover">
             </div>
             <p class="text-gray-600">Masuk ke akun perpustakaan digital Anda</p>
@@ -37,7 +41,7 @@
 
         <!-- Login Form -->
         <div class="bg-white p-8 rounded-2xl shadow-2xl">
-            <form method="post" action="../aksi/aksi_login.php" id="loginForm" class="space-y-6">
+            <form method="post" action="../aksi/aksi_login.php" id="loginForm" class="space-y-8 py-4">
                 <!-- Username Field -->
                 <div class="form-group">
                     <label for="username" class="block text-sm font-medium text-gray-600 mb-2">
@@ -80,108 +84,40 @@
                             id="togglePassword"
                             class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-teal-primary transition-colors"
                         >
-                            <svg id="eyeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                            </svg>
+                            <img id="eyeIcon" class="w-5 h-5" src="../assets/img/hidden.png" alt="Show Password">
+                            <img id="eyeOffIcon" class="w-5 h-5 hidden" src="../assets/img/eye.png" alt="Hide Password">
                         </button>
                     </div>
-                </div>
-
-                <!-- Remember Me & Forgot Password -->
-                <div class="flex items-center justify-between">
-                    <label class="flex items-center">
-                        <input 
-                            type="checkbox" 
-                            id="remember"
-                            class="w-4 h-4 text-teal-primary bg-gray-100 border-gray-300 rounded focus:ring-teal-500 focus:ring-2 transition-all"
-                        >
-                        <span class="font-medium ml-2 text-sm text-gray-600">Ingat saya</span>
-                    </label>
-                    <a href="#" class="text-sm text-teal-primary hover:text-teal-secondary transition-colors font-medium">
-                        Lupa password?
-                    </a>
                 </div>
 
                 <!-- Login Button -->
                 <button
                     type="submit"
-                    class="w-full bg-gradient-to-r from-blue-secondary to-teal-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-teal-500 hover:to-blue-secondary transition-all transform hover:scale-105 shadow-lg"
+                    class="w-full mt-10 bg-gradient-to-r from-blue-secondary to-teal-500 text-white py-3 px-6 rounded-full font-semibold hover:from-teal-500 hover:to-blue-secondary transition-all transform hover:scale-105 shadow-lg"
                 >
                     Masuk
                 </button>
             </form>
         </div>
 
-        <!-- Register Link -->
+        <!-- Register Link 
         <div class="text-center mt-6">
             <p class="text-gray-600">
                 Belum punya akun? 
-                <a href="../register.php" class="text-teal-primary hover:text-teal-secondary font-semibold transition-colors">
+                <a href="../auth/registrasi.php" class="text-teal-primary hover:text-teal-secondary font-semibold transition-colors">
                     Daftar sekarang
                 </a>
             </p>
         </div>
+        -->
 
-        <!-- Back to Home -->
+        <!-- Kembali ke Beranda -->
         <div class="text-center mt-4">
-            <a href="index.php" class="inline-flex items-center text-gray-500 hover:text-teal-primary transition-colors">
+            <a href="../index.php" class="inline-flex items-center text-gray-500 hover:text-teal-primary transition-colors">
                 <span class="mr-2">←</span>
                 Kembali ke beranda
             </a>
         </div>
     </div>
-
-    <style>
-        input:focus {
-            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
-        }
-
-        .loading {
-            position: relative;
-            color: transparent;
-        }
-
-        .loading::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            top: 50%;
-            left: 50%;
-            margin-left: -10px;
-            margin-top: -10px;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
-
-    <script>
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('password');
-        const eyeIcon = document.getElementById('eyeIcon');
-
-        togglePassword.addEventListener('click', function() {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            
-            if (type === 'password') {
-                eyeIcon.innerHTML = `
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                `;
-            } else {
-                eyeIcon.innerHTML = `
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
-                `;
-            }
-        });
-    </script>
 </body>
 </html>
