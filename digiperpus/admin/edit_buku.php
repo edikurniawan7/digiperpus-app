@@ -1,3 +1,10 @@
+<?php
+// Koneksi ke database
+include '../config.php';
+
+// Mulai Sesi
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,24 +39,19 @@
             font-family: 'Inter', ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
         }
     </style>
-
 </head>
 <body class="bg-gradient-to-t from-cyan-100 to-teal-50 min-h-screen">
     <!-- Sidebar -->
     <?php include 'partials/sidebar.php'; ?>
 
-    <!-- Ambil data buku berdasarkan ID -->
-    <?php include '../config.php';
-        // Ambil data kategori untuk dropdown
-        $data_kategori = mysqli_query(
-            $config,
-            "SELECT * FROM kategori ORDER BY nama_kategori ASC"
-        );
+    <?php
+    // Ambil data kategori untuk dropdown
+    $data_kategori = mysqli_query($config, "SELECT * FROM kategori ORDER BY nama_kategori ASC");
 
-        // Ambil data buku berdasarkan ID
-        $id = $_GET['id'];
-        $data = mysqli_query($config,"select * from buku where id_buku='$id'");
-        while($d = mysqli_fetch_array($data)){
+    // Ambil data buku berdasarkan ID
+    $id = $_GET['id'];
+    $data = mysqli_query($config, "SELECT * FROM buku WHERE id_buku='$id'");
+    while ($d = mysqli_fetch_array($data)) {
     ?>
     
     <!-- Main Content -->
@@ -59,7 +61,7 @@
                 <h1 class="text-3xl font-bold text-blue-secondary mb-6 text-center">Edit Buku</h1>
 
                 <!-- Form Edit Buku -->
-                 <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
                     <form action="../aksi/aksi_edit_buku.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id_buku" value="<?php echo $d['id_buku']; ?>">
                         
@@ -68,9 +70,8 @@
                             <div class="flex flex-col items-center">
                                 <label for="cover" class="block font-semibold text-blue-secondary mb-1">Cover Buku</label>
                                 <div id="cover-preview" class="w-48 h-64 border-2 border-gray-300 rounded-lg flex items-center justify-center bg-gray-100 overflow-hidden mb-4">
-                                    <img id="cover-img" src="..assets/img/cover<?php echo $d['cover']; ?>" alt="Cover" class="w-full h-full object-cover">
+                                    <img id="cover-img" src="../assets/img/cover/<?= $d['cover']; ?>" alt="<?= $d['judul']; ?>" class="w-full h-full object-cover">
                                 </div>
-                                   
                                 <input type="file" name="cover" id="cover" accept="image/*" class="w-48 mt-4 border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-teal-secondary">
                             </div>
 
@@ -99,9 +100,9 @@
                         <div class="grid grid-cols-2 gap-4 mb-6">
                             <div>
                                 <label for="id_kategori" class="block font-semibold text-blue-secondary mb-1">Kategori</label>
-                                    <select name="id_kategori" id="id_kategori" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
+                                <select name="id_kategori" id="id_kategori" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
                                     <option value="">Pilih Kategori</option>
-                                        <?php while ($kategori = mysqli_fetch_array($data_kategori)) { ?>
+                                    <?php while ($kategori = mysqli_fetch_array($data_kategori)) { ?>
                                         <option value="<?= $kategori['id_kategori']; ?>">
                                             <?= $kategori['nama_kategori']; ?>
                                         </option>
@@ -109,7 +110,7 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="stok" class="block font-semibold text-blue-secondary mb-1">stok</label>
+                                <label for="stok" class="block font-semibold text-blue-secondary mb-1">Stok</label>
                                 <input type="text" name="stok" id="stok" value="<?php echo $d['stok']; ?>" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors">
                             </div>
                         </div>

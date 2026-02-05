@@ -67,7 +67,7 @@ if ($_SESSION['role'] !== 'admin') {
             <div class="relative z-10">
                 <h1 class="text-3xl text-white font-bold mb-4">Hai <?php echo $_SESSION['nama']; ?> !</h1>
                 <h2 class="text-2xl font-bold text-white mb-2">Selamat datang sebagai Admin</h2>
-                <p class="text-blue-100">Kelola sistem perpustakaan digital Anda dengan mudah dan efisien.</p>
+                <p class="text-blue-100">Kelola sistem peminjaman buku anda dengan mudah dan efisien.</p>
             </div>
             </div>
         </div>

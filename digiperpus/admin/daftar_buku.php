@@ -2,6 +2,7 @@
 // Koneksi ke database
 include '../config.php';
 
+//Mulai Sesi
 session_start();
 
 ?>
@@ -98,11 +99,11 @@ session_start();
                     
                     <!-- Informasi Buku -->
                     <div class="p-4 flex flex-col flex-grow">
-                        <h3 class="text-lg font-bold text-blue-secondary mb-3">
+                        <h3 class="text-lg font-bold text-blue-secondary text-center">
                             <?= $buku['judul']; ?>
                         </h3>
                         
-                        <div class="flex flex-col gap-2 mb-4">
+                        <div class="flex flex-col gap-2  mb-4">
                             <!-- Pengarang -->
                             <div class="text-sm text-gray-600">
                                 <?= $buku['pengarang']; ?>
@@ -111,6 +112,9 @@ session_start();
                             <div class="text-sm text-gray-600">
                                 <span class="font-semibold">Stok:</span> <?= $buku['stok']; ?>
                             </div>
+
+                            <!-- Kategori Buku -->
+                            
                         </div>
                         
                         <!-- Tombol Aksi -->

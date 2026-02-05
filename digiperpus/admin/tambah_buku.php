@@ -1,5 +1,10 @@
 <?php
+// Koneksi ke database
 include '../config.php';
+
+//Mulai Sesi
+session_start();
+
 
 $data_kategori = mysqli_query(
     $config,
@@ -53,62 +58,63 @@ $data_kategori = mysqli_query(
                 <h1 class="text-3xl font-bold text-blue-secondary mb-6 text-center">Tambah Buku</h1>
 
                 <!-- Form Tambah Buku -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <form action="../aksi/aksi_tambah_buku.php" method="POST" enctype="multipart/form-data">
-                        <!-- Section 1: Cover & Informasi Dasar -->
+                        <input type="hidden" name="id_buku">
+                        
                         <div class="flex flex-row gap-8 mb-8">
                             <!-- Cover Buku -->
                             <div class="flex flex-col items-center">
+                                <label for="cover" class="block font-semibold text-blue-secondary mb-1">Cover Buku</label>
                                 <div id="cover-preview" class="w-48 h-64 border-2 border-gray-300 rounded-lg flex items-center justify-center bg-gray-100 overflow-hidden mb-4">
-                                    <span id="cover-text" class="text-gray-400">Preview cover</span>
+                                    <img id="cover-img" src="../assets/img/cover/default.png" alt="Default Cover" class="w-full h-full object-cover">
                                 </div>
-                                <label for="cover" class="block mb-2 font-semibold text-blue-secondary">Cover Buku</label>
-                                <input type="file" name="cover" id="cover" accept="image/*" class="w-48 border-2 border-teal-primary rounded-lg p-2 focus:outline-none focus:border-blue-secondary">
+                                <input type="file" name="cover" id="cover" accept="image/*" class="w-48 mt-4 border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-teal-secondary">
                             </div>
 
                             <!-- Informasi Dasar -->
                             <div class="flex-1">
                                 <div class="mb-4">
                                     <label for="judul" class="block font-semibold text-blue-secondary mb-1">Judul Buku</label>
-                                    <input type="text" name="judul" id="judul" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
+                                    <input type="text" name="judul" id="judul"  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="pengarang" class="block font-semibold text-blue-secondary mb-1">Pengarang</label>
-                                    <input type="text" name="pengarang" id="pengarang" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
+                                    <input type="text" name="pengarang" id="pengarang"  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="penerbit" class="block font-semibold text-blue-secondary mb-1">Penerbit</label>
-                                    <input type="text" name="penerbit" id="penerbit" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
+                                    <input type="text" name="penerbit" id="penerbit"  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="tahun_terbit" class="block font-semibold text-blue-secondary mb-1">Tahun Terbit</label>
-                                    <input type="number" name="tahun_terbit" id="tahun_terbit" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
+                                    <input type="number" name="tahun_terbit" id="tahun_terbit"  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Section 2: Kategori, Deskripsi, Stok -->
-                        <div class="grid grid-cols-3 gap-8 mb-8">
+                        <!-- Field Tambahan -->
+                        <div class="grid grid-cols-2 gap-4 mb-6">
                             <div>
                                 <label for="id_kategori" class="block font-semibold text-blue-secondary mb-1">Kategori</label>
-                                    <select name="id_kategori" id="id_kategori" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
+                                <select name="id_kategori" id="id_kategori" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
                                     <option value="">Pilih Kategori</option>
-                                        <?php while ($kategori = mysqli_fetch_array($data_kategori)) { ?>
+                                    <?php while ($kategori = mysqli_fetch_array($data_kategori)) { ?>
                                         <option value="<?= $kategori['id_kategori']; ?>">
                                             <?= $kategori['nama_kategori']; ?>
                                         </option>
                                     <?php } ?>
                                 </select>
                             </div>
-                            
                             <div>
-                                <label for="deskripsi" class="block font-semibold text-blue-secondary mb-1">Deskripsi Buku</label>
-                                <textarea name="deskripsi" id="deskripsi" rows="4" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required></textarea>
+                                <label for="stok" class="block font-semibold text-blue-secondary mb-1">Stok</label>
+                                <input type="text" name="stok" id="stok"  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors">
                             </div>
-                            <div>
-                                <label for="stok" class="block font-semibold text-blue-secondary mb-1">Stok Buku</label>
-                                <input type="number" name="stok" id="stok" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
-                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="deskripsi" class="block font-semibold text-blue-secondary mb-1">Deskripsi</label>
+                            <textarea name="deskripsi" id="deskripsi" rows="4" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors"></textarea>
                         </div>
 
                         <!-- Action Buttons -->

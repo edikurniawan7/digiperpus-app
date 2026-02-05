@@ -31,7 +31,7 @@ if ($cek > 0) {
 
     // user (langsung masuk dashboard)
     else if ($data['role'] == "user") {
-        header("Location: ../user/dashboard_user.php");
+        header("Location: ../user/dashboard.php");
         exit;
     }
 

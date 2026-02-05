@@ -1,8 +1,11 @@
 <?php
+// Koneksi ke database
 include '../config.php';
 
-?>
+//Mulai Sesi
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +52,28 @@ include '../config.php';
 
         <!-- Tabel Data Anggota -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
-            <table class="min-w-full table-auto">
+            <!-- Bagian Filter & Pencarian -->
+            <div class="mb-6 flex items-center gap-4">
+            
+                <a href="tambah_anggota.php" class="bg-blue-secondary text-white px-4 py-2 rounded-full hover:bg-blue-primary transition whitespace-nowrap">
+                    + Tambah Anggota
+                </a>
+
+                <!-- Pencarian -->
+                <form action="" method="GET" class="flex items-center gap-5 w-full">
+                    <input 
+                        name="search" 
+                        placeholder="Cari..." 
+                        type="text"
+                        class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-full focus:border-teal-primary focus:outline-none transition-colors"
+                    >
+                    <button type="submit" class="bg-blue-secondary text-white px-4 py-2 rounded-full hover:bg-blue-primary transition flex-shrink-0">
+                        Cari
+                    </button>
+                </form>
+            </div>
+
+            <table class="min-w-full table-auto rounded-lg overflow-hidden">
                 <thead>
                     <tr class="bg-blue-secondary rounded-full text-white">
                         <th class="px-4 py-2 text-left">ID Anggota</th>

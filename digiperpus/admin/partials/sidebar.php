@@ -1,8 +1,12 @@
+<?php 
+// Ambil nama file yang sedang dibuka
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
 <nav class="fixed top-0 left-64 right-0 h-20 bg-white shadow flex items-center px-5 z-40 transition-all">
     <!-- Judul -->
     <div class="flex-1">
         <h1 class="text-xl font-bold text-blue-secondary">Dashboard Admin</h1>
-        <p class="text-sm text-gray-500">Digiperpus | Sistem Perpustakaan Digital</p>
+        <p class="text-sm text-gray-500">Digiperpus | Sistem Peminjaman Buku</p>
     </div>
 
     <!-- User Info -->
@@ -26,10 +30,11 @@
 
         <!-- Menu -->
         <ul class="space-y-2 font-medium mt-10 ml-2">
-            <li><a href="dashboard_admin.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
-            <li><a href="transaksi.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
-            <li><a href="daftar_buku.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/open-book.png" alt="Data Buku" class="w-5 h-5 mr-3"><span>Daftar Buku</span></a></li>
-            <li><a href="daftar_anggota.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/group-users.png" alt="Data Anggota" class="w-5 h-5 mr-3"><span>Daftar Anggota</span></a></li>
+            <li><a href="dashboard_admin.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'dashboard_admin.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
+            <li><a href="transaksi.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'transaksi.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
+            <li><a href="daftar_buku.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_buku.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/open-book.png" alt="Data Buku" class="w-5 h-5 mr-3"><span>Daftar Buku</span></a></li>
+            <li><a href="daftar_anggota.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_anggota.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/group-users.png" alt="Data Anggota" class="w-5 h-5 mr-3"><span>Daftar Anggota</span></a></li>
+            <li><a href="riwayat_peminjaman.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'riwayat_peminjaman.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/history.png" alt="Riwayat_peminjaman" class="w-5 h-5 mr-3"><span>Riwayat</span></a></li>
 
             <hr class="my-4 border-blue-primary">
 
