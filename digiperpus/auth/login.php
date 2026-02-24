@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Digiperpus</title>
+    <link rel="icon" href="../assets/img/logo_title.png" type="image/png">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -23,6 +25,14 @@
             },        
         }
     </script>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            font-family: 'Inter', ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+    </style>
 </head>
 
 <!-- JS Login -->
@@ -93,7 +103,7 @@
                 <!-- Login Button -->
                 <button
                     type="submit"
-                    class="w-full mt-10 bg-gradient-to-r from-blue-secondary to-teal-500 text-white py-3 px-6 rounded-full font-semibold hover:from-teal-500 hover:to-blue-secondary transition-all transform hover:scale-105 shadow-lg"
+                    class="w-full mt-10 bg-blue-secondary text-white py-3 px-6 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg"
                 >
                     Masuk
                 </button>

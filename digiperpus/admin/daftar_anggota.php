@@ -48,30 +48,34 @@ session_start();
     
     <!-- Konten Utama -->
     <main class="flex-1 ml-64 p-8 mt-20 ">
-        <h1 class="text-3xl font-bold text-blue-secondary mb-6">Daftar Anggota</h1>
+        <h1 class="text-2xl font-bold text-blue-600 mb-6">
+            Daftar Anggota
+        </h1>
 
         <!-- Tabel Data Anggota -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
-            <!-- Bagian Filter & Pencarian -->
-            <div class="mb-6 flex items-center gap-4">
-            
-                <a href="tambah_anggota.php" class="bg-blue-secondary text-white px-4 py-2 rounded-full hover:bg-blue-primary transition whitespace-nowrap">
-                    + Tambah Anggota
-                </a>
+            <!-- FILTER & SEARCH -->
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <div class="flex items-center gap-4 flex-wrap">
 
-                <!-- Pencarian -->
-                <form action="" method="GET" class="flex items-center gap-5 w-full">
-                    <input 
-                        name="search" 
-                        placeholder="Cari..." 
-                        type="text"
-                        class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-full focus:border-teal-primary focus:outline-none transition-colors"
-                    >
-                    <button type="submit" class="bg-blue-secondary text-white px-4 py-2 rounded-full hover:bg-blue-primary transition flex-shrink-0">
-                        Cari
-                    </button>
-                </form>
-            </div>
+            <a href="tambah_anggota.php"
+               class="bg-blue-600 text-xs text-white px-4 py-2 rounded-full hover:bg-blue-500 transition">
+                + Tambah Anggota
+            </a>
+
+            <form onsubmit="return false;" class="flex items-center gap-3 flex-1 min-w-max">
+            <input 
+                name="search"
+                placeholder="Cari nama anggota..."
+                type="text"
+                class="flex-1 px-4 py-2 text-xs border-2 border-gray-300 rounded-full focus:outline-none focus:border-teal-500 transition"
+            >
+            <button type="submit" class="bg-blue-600 text-xs text-white px-2 py-2 rounded-full hover:bg-blue-500 transition">
+                <img src="../assets/img/search.png" alt="Search" class="w-4 h-4">
+            </button> 
+            </form>
+        </div>
+    </div>
 
             <table class="min-w-full table-auto rounded-lg overflow-hidden">
                 <thead>
@@ -79,13 +83,12 @@ session_start();
                         <th class="px-4 py-2 text-left">ID Anggota</th>
                         <th class="px-4 py-2 text-left">Nama Lengkap</th>
                         <th class="px-4 py-2 text-left">Username</th>
-                        <th class="px-4 py-2 text-left">Kelas</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     // Ambil data anggota dari database
-                    $query = "SELECT id_user, nama, username, kelas FROM users WHERE role='user' ORDER BY nama ASC";
+                    $query = "SELECT id_user, nama, username FROM users WHERE role='user' ORDER BY nama ASC";
                     $result = mysqli_query($config, $query);
 
                     // Tampilkan data anggota
@@ -94,7 +97,6 @@ session_start();
                         echo "<td class='px-4 py-2'>" . $row['id_user'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $row['nama'] . "</td>";
                         echo "<td class='px-4 py-2'>" . $row['username'] . "</td>";
-                        echo "<td class='px-4 py-2'>" . $row['kelas'] . "</td>";
                         echo "</tr>";
                     }
                     ?>
