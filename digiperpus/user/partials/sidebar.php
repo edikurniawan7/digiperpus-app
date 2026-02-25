@@ -30,11 +30,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         <!-- Menu -->
         <ul class="space-y-2 font-medium mt-10 ml-2">
-            <li><a href="dashboard.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'dashboard.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
-            <!-- <li><a href="daftar_buku.php" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/open-book.png" alt="Data Buku" class="w-5 h-5 mr-3"><span>Data Buku</span></a></li> -->
-            <li><a href="transaksi.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'transaksi.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
-            <li><a href="riwayat_peminjaman.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'riwayat_peminjaman.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/history.png" alt="Riwayat" class="w-5 h-5 mr-3"><span>Riwayat</span></a></li>
-
+            <li><a href="dashboard.php" class="flex items-center p-2 text-white rounded-lg  <?php echo $current_page == 'dashboard.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
+            <li><a href="transaksi.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'transaksi.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
+            <li><a href="riwayat_peminjaman.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'riwayat_peminjaman.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/history.png" alt="Riwayat_peminjaman" class="w-5 h-5 mr-3"><span>Riwayat</span></a></li>
             <hr class="my-4 border-blue-primary">
 
             <li><a href="../auth/logout.php" onclick="confirmLogout(event)" class="flex items-center p-2 text-white rounded-lg hover:bg-blue-primary transition-all"><img src="../assets/img/logout.png" alt="Logout" class="w-5 h-5 mr-3"><span>Logout</span></a></li>

@@ -88,9 +88,10 @@
                     <p class="text-gray-600 text-xs  mb-1"><?= $buku['pengarang']; ?></p>
                     <p class="text-gray-600 text-xs  mb-1">Stok : <?= $buku['stok']; ?></p>
                     <div class="flex flex-col gap-2">
-                        <button class="w-full bg-blue-secondary text-white px-3 py-2 text-sm rounded-lg hover:bg-blue-primary transition">
-                        <a href="transaksi.php?id=<?= $buku['id_buku']; ?>">Pinjam Buku</a>
-                        </button>
+                       <a href="pinjam_buku.php?id=<?= $buku['id_buku']; ?>"
+                            class="block w-full text-center bg-blue-secondary text-white px-3 py-2 text-sm rounded-lg hover:bg-blue-primary transition">
+                            Pinjam Buku
+                        </a>
                         <button class="w-full bg-teal-primary text-white px-3 py-2 text-sm rounded-lg hover:bg-teal-secondary transition">
                         <a href="preview_buku.php?id_buku=<?= $buku['id_buku']; ?>">Lihat Preview</a>
                         </button>
