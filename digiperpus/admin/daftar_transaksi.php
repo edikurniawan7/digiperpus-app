@@ -18,6 +18,7 @@ $query = mysqli_query($config, "SELECT * FROM transaksi ORDER BY id_transaksi DE
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaksi</title>
+    <link rel="icon" href="../assets/img/logo_title.png" type="image/png">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>

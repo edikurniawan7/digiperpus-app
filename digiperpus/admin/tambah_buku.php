@@ -17,6 +17,7 @@ $data_kategori = mysqli_query(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Buku | Digiperpus</title>
+    <link rel="icon" href="../assets/img/logo_title.png" type="image/png">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -67,7 +68,7 @@ $data_kategori = mysqli_query(
                             <div class="flex flex-col items-center">
                                 <label for="cover" class="block font-semibold text-blue-secondary mb-1">Cover Buku</label>
                                 <div id="cover-preview" class="w-48 h-64 border-2 border-gray-300 rounded-lg flex items-center justify-center bg-gray-100 overflow-hidden mb-4">
-                                    <img id="cover-img" src="../assets/img/cover/default.png" alt="Default Cover" class="w-full h-full object-cover">
+                                    <img id="cover-img" src="../uploads/cover/default.png" alt="Default Cover" class="w-full h-full object-cover">
                                 </div>
                                 <input type="file" name="cover" id="cover" accept="image/*" class="w-48 mt-4 border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-teal-secondary">
                             </div>

@@ -11,6 +11,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Buku</title>
+    <link rel="icon" href="../assets/img/logo_title.png" type="image/png">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,7 +50,7 @@ session_start();
     $data_kategori = mysqli_query($config, "SELECT * FROM kategori ORDER BY nama_kategori ASC");
 
     // Ambil data buku berdasarkan ID
-    $id = $_GET['id'];
+    $id = $_GET['id_buku'];
     $data = mysqli_query($config, "SELECT * FROM buku WHERE id_buku='$id'");
     while ($d = mysqli_fetch_array($data)) {
     ?>
@@ -102,8 +103,8 @@ session_start();
                                 <label for="id_kategori" class="block font-semibold text-blue-secondary mb-1">Kategori</label>
                                 <select name="id_kategori" id="id_kategori" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-teal-secondary focus:outline-none transition-colors" required>
                                     <option value="">Pilih Kategori</option>
-                                    <?php while ($kategori = mysqli_fetch_array($data_kategori)) { ?>
-                                        <option value="<?= $kategori['id_kategori']; ?>">
+                                    <?php mysqli_data_seek($data_kategori, 0); while ($kategori = mysqli_fetch_array($data_kategori)) { ?>
+                                        <option value="<?= $kategori['id_kategori']; ?>" <?= ($kategori['id_kategori'] == $d['id_kategori']) ? 'selected' : ''; ?>>
                                             <?= $kategori['nama_kategori']; ?>
                                         </option>
                                     <?php } ?>

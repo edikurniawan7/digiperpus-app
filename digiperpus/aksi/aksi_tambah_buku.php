@@ -12,7 +12,7 @@ $deskripsi     = $_POST['deskripsi'];
 
 $cover     = $_FILES['cover']['name'];
 $cover_tmp = $_FILES['cover']['tmp_name'];
-$folder    = '../assets/img/cover/' . $cover;
+$folder    = '../uploads/cover/' . $cover;
 
 // Upload cover
 move_uploaded_file($cover_tmp, $folder);

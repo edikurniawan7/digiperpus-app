@@ -22,7 +22,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 </nav>
 
 <!-- Sidebar -->
-<aside id="top-bar-sidebar" class="fixed top-0 left-0 z-40 w-64 h-full bg-blue-secondary transition-transform -translate-x-full sm:translate-x-0 shadow-lg border-r border-blue-primary" aria-label="Sidebar">
+<aside id="top-bar-sidebar" class="fixed top-0 left-0 z-40 w-64 h-full bg-blue-secondary transition-transform -translate-x-full sm:translate-x-0 shadow-lg border-r border-blue-primary " aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft border-e border-default">
         <div class="flex items-center justify-center border-b-2 border-white pb-1">
             <img src="../assets/img/logo_digiperpus1.png" alt="Logo DigiPerpus" class="h-15 w-40 rounded-3xl object-cover">
@@ -30,11 +30,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         <!-- Menu -->
         <ul class="space-y-2 font-medium mt-10 ml-2">
-            <li><a href="dashboard_admin.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'dashboard_admin.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
-            <li><a href="daftar_transaksi.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_transaksi.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
-            <li><a href="daftar_buku.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_buku.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/open-book.png" alt="Data Buku" class="w-5 h-5 mr-3"><span>Daftar Buku</span></a></li>
-            <li><a href="daftar_anggota.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_anggota.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/group-users.png" alt="Data Anggota" class="w-5 h-5 mr-3"><span>Daftar Anggota</span></a></li>
-            <li><a href="riwayat_peminjaman.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'riwayat_peminjaman.php' ? 'bg-blue-primary' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/history.png" alt="Riwayat_peminjaman" class="w-5 h-5 mr-3"><span>Riwayat</span></a></li>
+            <li><a href="dashboard_admin.php" class="flex items-center p-2 text-white rounded-lg  <?php echo $current_page == 'dashboard_admin.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-3"><span>Dashboard</span></a></li>
+            <li><a href="daftar_transaksi.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_transaksi.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/book.png" alt="Peminjaman" class="w-5 h-5 mr-3"><span>Peminjaman</span></a></li>
+            <li><a href="daftar_buku.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_buku.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/open-book.png" alt="Data Buku" class="w-5 h-5 mr-3"><span>Daftar Buku</span></a></li>
+            <li><a href="daftar_anggota.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'daftar_anggota.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/group-users.png" alt="Data Anggota" class="w-5 h-5 mr-3"><span>Daftar Anggota</span></a></li>
+            <li><a href="riwayat_peminjaman.php" class="flex items-center p-2 text-white rounded-lg <?php echo $current_page == 'riwayat_peminjaman.php' ? 'bg-blue-primary border-l-4 border-white' : 'hover:bg-blue-primary'; ?> transition-all"><img src="../assets/img/history.png" alt="Riwayat_peminjaman" class="w-5 h-5 mr-3"><span>Riwayat</span></a></li>
 
             <hr class="my-4 border-blue-primary">
 
